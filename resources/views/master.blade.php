@@ -53,11 +53,5 @@
     .custom-width {
     width: 300px; /* Adjust the value as needed */
 }
-
-
-
-
 </style>
-
-
 </html>
