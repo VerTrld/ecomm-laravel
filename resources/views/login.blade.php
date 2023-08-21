@@ -25,6 +25,4 @@
     </div>
 </div>
 
-<h1>dajkdjadka</2>
-
 @endsection
