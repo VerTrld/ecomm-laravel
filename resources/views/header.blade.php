@@ -24,7 +24,7 @@ if (Session::has('user')) {
         </ul>
 
          <span id="cart-status">{{$total}}</span>
-        <a href="" class="cart-link"> <ion-icon name="cart" size="large"></ion-icon></a>
+        <a href="/cartlist" class="cart-link"> <ion-icon name="cart" size="large"></ion-icon></a>
 
         @if (Session::has('user'))
         <ul class="navbar-nav">

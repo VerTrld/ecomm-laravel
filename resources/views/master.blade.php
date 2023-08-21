@@ -18,40 +18,42 @@
     {{View::make('footer')}}
 </body>
 
-
 <style>
     .custom-login{
-        height:500px;
-        padding-top: 100px;
-    }
-     img.slider-img{
-        padding-top: 100px;
-        height: 600px;
-
-     }
-     .trending-image{
-        height: 200px ;
-     }
-     .trending-item{
-        float: left;
-        width: 20%;
-     }
-     .detail-img{
-        height: 25rem;
-     }
-     /* Add this to your CSS file or style section */
-    .cart-link {
-    color: inherit; /* Inherit the color from the parent */
-    text-decoration: none; /* Remove underline */
-    }
-    .navbar-brand{
-        margin-left: 50px; /* Adjust the value as needed */
-    }
-     .navbar-nav {
-        margin-right: 130px; /* Adjust the value as needed */
-    }
-    .custom-width {
-    width: 300px; /* Adjust the value as needed */
+    height:500px;
+    padding-top: 100px;
 }
+ img.slider-img{
+    padding-top: 100px;
+    height: 600px;
+
+ }
+ .trending-image{
+    height: 200px ;
+ }
+ .trending-item{
+    float: left;
+    width: 20%;
+ }
+ .detail-img{
+    height: 25rem;
+ }
+ /* Add this to your CSS file or style section */
+.cart-link {
+color: inherit; /* Inherit the color from the parent */
+text-decoration: none; /* Remove underline */
+}
+.navbar-brand{
+    margin-left: 50px; /* Adjust the value as needed */
+}
+ .navbar-nav {
+    margin-right: 130px; /* Adjust the value as needed */
+}
+.custom-width {
+width: 300px; /* Adjust the value as needed */
+}
+
+
 </style>
+
 </html>
