@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
                 'price' => '10,399',
                 'description' => 'AMD B550 (Ryzen AM4) micro ATX gaming motherboard with PCIe 4.0, dual M.2, 10 DrMOS power stages, 2.5 Gb Ethernet, HDMI, DisplayPort, SATA 6 Gbps, USB 3.2 Gen 2 Type-A and Type-C, and Aura Sync RGB lighting support',
                 'category' => 'MotherBoard',
-                'gallery' => 'https://www.makotekcomputers.com/cdn/shop/products/ASUS-TUF-GAMING-B550M-PLUS-WI-FI-II-AM4-MOTHERBOARD_530x@2x.jpg?v=1657238393',
+                'gallery' => 'https://ph-live-01.slatic.net/p/bca7cf1a325627d4c43600d3ea5dc270.jpg',
             ],
             [
                 'name' => 'KINGSTON FURY BEAST RGB 16GB 2X8GB',
@@ -50,6 +50,36 @@ class ProductSeeder extends Seeder
                 'category' => 'Case',
                 'gallery' => 'https://down-ph.img.susercontent.com/file/a605051cb75ac973201f5912f88f9ab5',
             ],
+
+            [
+                'name' => 'AMD Ryzen 5 5600 4.4GHz 6 Core',
+                'price' => '7,995',
+                'description' => 'Dominate your favorite games with the AMD Ryzen™ 5 5600. Featuring 6 cores, 12 threads, boost clocks of up to 4.4GHz2 and 35MB of total cache, upgrade to the award-winning performance of “Zen 3.”1',
+                'category' => 'Processor',
+                'gallery' => 'https://dynaquestpc.com/cdn/shop/products/AMDRYZEN556004.4GHZ6COREPROCESSOR_grande.jpg?v=1650855603',
+            ],
+
+            [
+                'name' => 'Razer Viper 8',
+                'price' => '2,250',
+                'description' => 'Razer Viper 8 KHZ Ambidextrous Esports Gaming Mouse',
+                'category' => 'Mouse',
+                'gallery' => 'https://down-ph.img.susercontent.com/file/34913313809bf17ca0c358ab780038ad',
+            ],
+            
+            [
+                'name' => 'RAZER Huntsman Mini 60%',
+                'price' => '6,995',
+                'description' => 'Optical Gaming Keyboard Linear Red Switch',
+                'category' => 'Mouse',
+                'gallery' => 'https://tejarra-media.s3.amazonaws.com/7464/item_XXL_132167109_5339a9666c073.jpg',
+            ],
+
+
+
+
+
+
         ]);
     }
 }

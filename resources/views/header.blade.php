@@ -7,7 +7,7 @@ if (Session::has('user')) {
 }
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow ">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">PC MasterbIT</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,8 +23,9 @@ if (Session::has('user')) {
           </form>
         </ul>
 
-         <span id="cart-status">{{$total}}</span>
+      <span class="cart-status">{{$total}}</span>
         <a href="/cartlist" class="cart-link"> <ion-icon name="cart" size="large"></ion-icon></a>
+
 
         @if (Session::has('user'))
         <ul class="navbar-nav">
@@ -43,6 +44,9 @@ if (Session::has('user')) {
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
                 </li>
         </ul>
         @endif

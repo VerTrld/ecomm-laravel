@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>PCMB</title>
 </head>
 
@@ -19,9 +21,13 @@
 </body>
 
 <style>
-    .custom-login{
-    height:500px;
-    padding-top: 100px;
+.custom-login{
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 96%);
+}
+.custom-register{
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 96%);
 }
  img.slider-img{
     padding-top: 100px;
@@ -52,6 +58,41 @@ text-decoration: none; /* Remove underline */
 .custom-width {
 width: 300px; /* Adjust the value as needed */
 }
+.bg-header{
+    background-color:  #122480;
+}
+.bg-footer{ 
+    background-color:  #122480;
+    min-height: 100vh;
+
+   
+}
+
+  .bg-dark {
+            /* Set your desired height here */
+            height: 400px; 
+            font-weight: 600;
+        }
+
+
+  .cart-status {
+    position: relative;
+    font-size: 11px;
+    border-radius: 50%;
+    background: #d60b28;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    display: block;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+  .cartlist{
+        min-height: 100vh;
+
+
+  }
 
 
 </style>
