@@ -52,6 +52,7 @@
             <div class="card-body py-5 px-md-5">
               <form action="register" method="POST">
                 @csrf
+                <h1 class="text-center">Register</h1>
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example2" name="name"  class="form-control" />
                   <label class="form-label"  for="form3Example2">Full Name</label>

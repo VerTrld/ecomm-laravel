@@ -2,60 +2,14 @@
 @section('content')
 
 
-
-
-{{-- <div class="container mt-5">
-    <div class="row">
-        <div class="col-sm-6 mt-5">
-
-            @foreach ($products as $item )
-            <a href="detail/{{$item->id}}"></a>
-            <img src="{{$item->gallery}}" alt="" >
-            <h2>{{$item->name}}</h2>
-            <h2>{{$item->description}}</h2>
-
-            @endforeach
-
-
-        </div>
-    </div>
-</div> --}}
-
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-8">
-                        <div class="p-2">
-                            <h4>Shopping cart</h4>
-                        </div>
-                        @foreach ($products as $item )
-                        <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                            <div class="mr-1"><img class="rounded" src="{{$item->gallery}}" width="70"></div>
-                            <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{$item->name}}</span>
-                            </div>
-                            <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
-                                <h5 class="text-grey mt-1 mr-1 ml-1"></h5><i class="fa fa-plus text-success"></i></div>
-                            <div>
-                                <h5 class="text-grey">₱{{$item->price}}</h5>
-                            </div>
-                            <a href="removecart/{{$item->cart_id}}">remove</a>
-                     
-                        </div>
-
-                        @endforeach
-
-                        <button class="btn btn-success mt-5">Checkout</button>
-        </div>
-    </div>
-</div> --}}
-
-
-<div class="container cartlist">
+<div class="container cartlist ">
     <h1 class="h3 mb-5">Payment</h1>
     <div class="row">
       <!-- Left -->
       <div class="col-lg-9">
         <div class="accordion" id="accordionPayment">
           <!-- Credit card -->
+          @if(count($products) > 0)
           <div class="accordion-item mb-3">
             <h2 class="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
               <div class="form-check">
@@ -73,56 +27,62 @@
                 </svg>
               </span>
             </h2>
-            
-            <div id="collapseCC" class="accordion-collapse collapse show" data-bs-parent="#accordionPayment" style="">
-              <div class="accordion-body">
-                <div class="row">
+            <table class="table table-borderless">
+              <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach ($products as $index => $item)
+                  <tr>
+                      <th scope="row">{{ $index + 1 }}</th>
+                      <td>
+                          <div class="d-flex align-items-center">
+                              <img class="rounded mr-2" src="{{$item->gallery}}" width="50">
+                              <span class="font-weight-bold">{{$item->name}}</span>
+                          </div>
+                      </td>
+                      <td>
+                          <div class="qty d-flex align-items-center">
+                              <i class="fa fa-minus text-danger"></i>
+                              <h5 class="text-grey mx-2"></h5>
+                              <i class="fa fa-plus text-success"></i>
+                          </div>
+                      </td>
+                      <td>
+                          <h5 class="text-grey"> ₱ {{ number_format($item->price, 0, '.', ',') }}</h5>
+                      </td>
+                      <td>
+                          <a href="removecart/{{$item->cart_id}}">remove</a>
+                      </td>
+                  </tr>
 
-
-                    @foreach ($products as $item )
-                    <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="{{$item->gallery}}" width="70"></div>
-                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{$item->name}}</span>
-                        </div>
-                        <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
-                            <h5 class="text-grey mt-1 mr-1 ml-1"></h5><i class="fa fa-plus text-success"></i></div>
-                        <div>
-                            <h5 class="text-grey">₱{{$item->price}}</h5>
-                        </div>
-                        <a href="removecart/{{$item->cart_id}}">remove</a>
-                 
-                    </div>
-
-                    @endforeach
-
-
-
-
-                 
-                </div>
-              </div>
-            </div>
+                  @endforeach
+                </tbody>
+              </table>
+          
           </div>
-
         </div>
       </div>
       <!-- Right -->
       <div class="col-lg-3">
-        <div class="card  top-0">
+        <div class="card  sticky-top top-0">
           <div class="p-3 bg-light bg-opacity-10">
             <h6 class="card-title mb-3">Order Summary</h6>
             <div class="d-flex justify-content-between mb-1 small">
-              <span>Subtotal</span> <span>$214.50</span>
+              <span>Subtotal</span> <span> ₱ {{ number_format($totalPrice, 0, '.', ',') }}</span>
             </div>
             <div class="d-flex justify-content-between mb-1 small">
               <span>Shipping</span> <span>FREE</span>
             </div>
-            <div class="d-flex justify-content-between mb-1 small">
-              <span>Coupon (Code: NEWYEAR)</span> <span class="text-danger">-$10.00</span>
-            </div>
             <hr>
             <div class="d-flex justify-content-between mb-4 small">
-              <span>TOTAL</span> <strong class="text-dark">$224.50</strong>
+              <span>TOTAL</span> <strong class="text-dark">₱{{ number_format($totalPrice, 0, '.', ',') }}</strong>
             </div>
             <div class="form-check mb-1 small">
               <input class="form-check-input" type="checkbox" value="" id="tnc">
@@ -130,14 +90,14 @@
                 I agree to the <a href="#">terms and conditions</a>
               </label>
             </div>
-            <div class="form-check mb-3 small">
-              <input class="form-check-input" type="checkbox" value="" id="subscribe">
-              <label class="form-check-label" for="subscribe">
-                Get emails about product updates and events. If you change your mind, you can unsubscribe at any time. <a href="#">Privacy Policy</a>
-              </label>
-            </div>
-            <button class="btn btn-primary w-100 mt-2">Place order</button>
+            <a href="ordernow">
+            <button class="btn btn-primary w-100 mt-2">Place order</button></a>
           </div>
+          @else
+          <div class="col-lg-12 ">
+            <h2>No items in cart</h2>
+        </div>
+        @endif
         </div>
       </div>
     </div>

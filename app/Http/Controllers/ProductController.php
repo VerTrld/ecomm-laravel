@@ -45,7 +45,6 @@ function addToCart(Request $req){
     }
 
     function cartList() {
-
         if (Session::has('user')) {
             $userId = Session::get('user')['id'];
             $products = DB::table('cart')
@@ -54,7 +53,10 @@ function addToCart(Request $req){
                 ->select('products.*', 'cart.id as cart_id')
                 ->get();
     
-            return view('cartlist', ['products' => $products]);
+              $totalPrice = $products->sum('price'); // Calculate the total sum
+    
+            return view('cartlist', ['products' => $products, 'totalPrice' => $totalPrice]);
+
         } else {
             // User is not logged in, show login form
             return   redirect('/login');
@@ -64,5 +66,18 @@ function addToCart(Request $req){
     function removeCart($id){
         Cart:: destroy($id);
         return redirect('cartlist');
+        
+    }
+    function orderNow(){
+
+        $userId = Session::get('user')['id'];
+          return $products = DB::table('cart')
+            ->join('products', 'cart.product_id', '=', 'products.id')
+            ->where('cart.user_id', $userId)
+            // ->sum('products.price');
+            ->sum(DB::raw('CAST(REPLACE(products.price, ",", "") AS UNSIGNED)'));
+            return view('cartlist', ['products' => $products]);
+
+
     }
 }

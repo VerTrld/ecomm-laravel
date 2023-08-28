@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
@@ -32,10 +33,19 @@ class UserController extends Controller
         $user -> email=$req->email;
         $user -> password=Hash::make($req->password);
         $user -> save();
-       return redirect('/login');
+         return redirect('/login');
 
+    }
 
-
+    function addProduct(Request $req) {
+        $product = new Product;
+        $product->name = $req->name;
+        $product->price = $req->price;
+        $product->category = $req->category;
+        $product->description = $req->description;
+        $product->gallery = $req->gallery;
+        $product->save();
+        return redirect('/'); // Redirect to appropriate page
     }
 
 }

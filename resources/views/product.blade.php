@@ -50,9 +50,9 @@
 </div> --}}
 
 
-<section class="py-5">
+<section class="py-5 product-item">
     <div class="container px-4 px-lg-2 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
 
             <!-- Loop through products -->
             @foreach ($products as $item)
@@ -68,7 +68,7 @@
                             <!-- Product name-->
                             <h5 class="fw-bolder">{{ $item['name'] }}</h5>
                             <!-- Product price-->
-                            ₱ {{ $item['price'] }}
+                        ₱ {{ number_format($item['price'], 0, '.', ',') }}
                         </div>
 
                     </div>

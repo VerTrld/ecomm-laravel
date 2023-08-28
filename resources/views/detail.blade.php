@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
 
+<section class="detail-products">
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-6 mt-5">
@@ -9,7 +10,7 @@
         <div class="col-sm-6 mt-5">
             <p></p>
             <h2>{{$products['name']}}</h2>
-            <h3>₱{{$products['price']}}</h3>
+            <h3> ₱ {{ number_format($products['price'], 0, '.', ',') }}</h3>
             <p>Details: {{$products['description']}}</p>
             <p>Category: {{$products['category']}}</p>
 
@@ -22,6 +23,7 @@
         </div>
     </div>
 </div>
+</section>
 @endsection
 
 

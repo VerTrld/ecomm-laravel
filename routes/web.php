@@ -26,12 +26,16 @@ Route::get('/logout', function () {
 });
 
 Route:: view('/register', 'register');
+Route:: view('/addproduct', 'addproduct');
+
 
 Route::post("/login", [UserController::class,'login']);
 Route::post("/register", [UserController::class,'register']);
+Route::post("/addproduct", [UserController::class,'addProduct']);
 Route::get("/", [ProductController::class,'index']);
 Route::get("detail/{id}", [ProductController::class,'detail']);
 Route::post("add_to_cart",[ProductController::class,'addToCart']);
 Route::get("cartlist",[ProductController::class,'cartList']);
 Route::get("/removecart/{id}",[ProductController::class,'removeCart']);
+Route::get("ordernow",[ProductController::class,'orderNow']);
 

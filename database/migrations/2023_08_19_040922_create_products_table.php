@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("price");
             $table->string("category");
             $table->string("description");
-            $table->string("gallery");
+            $table->string("gallery", 1000); // Set the maximum length to 1000 characters
             $table->timestamps();
         });
     }

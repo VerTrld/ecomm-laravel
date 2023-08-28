@@ -11,7 +11,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <title>PCMB</title>
+    <title>PCM</title>
 </head>
 
 <body class="border-0 bd-example m-0 border-0">
@@ -88,12 +88,11 @@ width: 300px; /* Adjust the value as needed */
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
   }
-  .cartlist{
+  .cartlist,
+  .detail-products
+  {
         min-height: 100vh;
-
-
   }
-
 
 </style>
 
